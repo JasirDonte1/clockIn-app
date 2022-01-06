@@ -1,0 +1,12 @@
+h1{
+    padding-top: 10px;
+    padding-left: 30px;
+}
+.shell {
+    margin: auto;
+    width: 20%;
+    border: 20px solid rgb(146, 146, 146);
+    padding: 10px;
+    background-color: rgb(221, 221, 221);
+  }
+

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLoginComponent implements OnInit {
 
+  eid:string="";
+  pin:string="";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  AttemptLogin(){
+    
   }
 
 }

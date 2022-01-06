@@ -1,7 +1,12 @@
-<mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side">Sidenav</mat-sidenav>
-  <mat-sidenav-content> 
-    <img class="sidenav" src="assets/images/sidenav-icon.png" (click)="sidenav.toggle()"/>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<html>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+      <button class="navButton">Find Employee</button>
+      <button class="navButton">Create New Employee Account</button>
+    </mat-sidenav>
+    <mat-sidenav-content> 
+      <img class="sidenav" src="assets/images/sidenav-icon.png" (click)="sidenav.toggle()"/>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>  
+</html>

@@ -12,10 +12,12 @@ import { RegisterEmployeeComponent } from './register-employee/register-employee
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FindEmployeeComponent } from './find-employee/find-employee.component';
 
+
 const appRoute: Routes = [
   {path: '', component: ConsoleComponent},
   {path: 'register', component: RegisterEmployeeComponent },
-  {path: 'search', component: FindEmployeeComponent}
+  {path: 'search', component: FindEmployeeComponent},
+  {path: 'login', component: AdminLoginComponent}
 ];
 
 @NgModule({
