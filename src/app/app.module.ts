@@ -7,20 +7,33 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ConsoleComponent } from './console/console.component';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FindEmployeeComponent } from './find-employee/find-employee.component';
 
+const appRoute: Routes = [
+  {path: '', component: ConsoleComponent},
+  {path: 'register', component: RegisterEmployeeComponent },
+  {path: 'search', component: FindEmployeeComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
-    ConsoleComponent
+    ConsoleComponent,
+    RegisterEmployeeComponent,
+    FindEmployeeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatSidenavModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoute),
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

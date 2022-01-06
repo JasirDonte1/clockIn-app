@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class ConsoleComponent implements OnInit {
 
   userInput = "";
+  output = ""
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  buttonClicked(){
+    this.output = "button was clicked"
   }
 
 }
