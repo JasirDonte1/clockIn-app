@@ -1,0 +1,9 @@
+.wrapper{
+    width: 300px;
+    height:300px;
+    border:1px solid black;
+}
+.input{
+    display: block;
+    margin : 0 auto;
+}
