@@ -5,9 +5,23 @@
 }
 .input{
     display: block;
-    margin : 0 auto;
+    margin: 0 auto;
 }
 #submitButton{
     display: block;
     margin : 0 auto;
+}
+
+#innerSection{
+    text-align: center;
+}
+
+#outputConsole{
+    height: 400px;
+    width: 800px;
+    background-color: rgb(253, 253, 253);
+    border: 10px solid darkgray;
+    margin-left: 11%;
+    margin-right: 15%;
+    margin-top: 5%;
 }
