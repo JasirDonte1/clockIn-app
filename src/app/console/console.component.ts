@@ -15,8 +15,6 @@ export class ConsoleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  AdminButtonClicked(){
-    this.output = "button was clicked"
-  }
+ 
 
 }

@@ -1,23 +1,41 @@
 
+h1{
+    text-align: center;
+}
 mat-sidenav-container {
     height: 100%;
-    background-color: rgb(227, 251, 255);
+    background-color: rgb(253, 253, 253);
 }
 mat-sidenav, mat-sidenav-content {
     padding-top: 16px;
-
+}
+#outlet{
+    margin-left: 80px;
 }
 mat-sidenav {
     background-color: rgb(221, 221, 221);
     width: 200px;
+    height: 150px;
+    position:fixed;  
+    top:65px;
 }
-.sidenav{
+#sidenav{
     height: 30px;
     border: 7px solid rgb(221, 221, 221);
+    position: fixed;
+    top: 65px;
+    background-color: rgb(243, 243, 243);
 }
 
 .navButton{
     background-color: transparent;
-    border: transparent;
-    padding-top: 15px;
+    border: 2px solid rgb(243, 243, 243);
+    padding-top: 10px;
+    width: 200px;
+    color: rgb(105, 105, 105);
 }
+.navButton:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+

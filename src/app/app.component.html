@@ -1,12 +1,17 @@
 <html>
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side">
-      <button class="navButton">Find Employee</button>
-      <button class="navButton">Create New Employee Account</button>
+      <button class="navButton" (click)="NavButtonPressed('home')">Home</button>
+      <button class="navButton" (click)="NavButtonPressed('find')">Find Employee</button>
+      <button class="navButton" (click)="NavButtonPressed('create')">Create New Account</button>
+      <button class="navButton" (click)="NavButtonPressed('admin')">Admin Login</button>
     </mat-sidenav>
     <mat-sidenav-content> 
-      <img class="sidenav" src="assets/images/sidenav-icon.png" (click)="sidenav.toggle()"/>
-      <router-outlet></router-outlet>
+      <h1 id="title">{{ title }}</h1>
+      <img id="sidenav" src="assets/images/sidenav-icon.png" (click)="sidenav.toggle()"/>
+      <div id="outlet">
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>  
 </html>
