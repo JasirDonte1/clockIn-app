@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent 
 {
-  title = 'clock-in-app';
+  title = 'Clock-In-App';
 
   NavButtonPressed(name:string)
   {

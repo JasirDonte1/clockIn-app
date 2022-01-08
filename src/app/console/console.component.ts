@@ -35,6 +35,7 @@ export class ConsoleComponent implements OnInit {
   ];
   tableColumns = ['ID', 'Name', 'Type']; 
   
+  consoleResponse = ""; 
 
   constructor() { }
 

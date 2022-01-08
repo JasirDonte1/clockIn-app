@@ -3,6 +3,7 @@
         <input id="input" class="input" type="text" placeholder="Enter Employee ID#" name="eid" [(ngModel)]="userInput" required>
         <button id="submitButton">SUBMIT</button>
     </div>
+    <p id="response">{{ consoleResponse }}</p>
 </div>
 <div id="outputConsole">
     <table mat-table [dataSource]="data">

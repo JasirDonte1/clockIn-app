@@ -1,6 +1,11 @@
-<div class="find-page">
+<div class="form">
     <h1>Search for Employee</h1>
     <label for="text-field">Search</label>
     <input type="text" placeholder="" class="field" name="text-field" [(ngModel)]="search">
     <br class="break">
+</div>
+<div class="console">
+    <p>Name: {{found.name}}</p>
+    <p>ID#: {{found.id}}</p>
+    <p>Type: {{found.eType}}</p>
 </div>

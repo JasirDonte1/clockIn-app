@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../modles/Employee';
 
 @Component({
   selector: 'app-find-employee',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class FindEmployeeComponent implements OnInit {
 
   search:string = ""; 
+  found:Employee = new Employee('temp');
+  isFound:boolean = false; 
 
   constructor() { }
 
