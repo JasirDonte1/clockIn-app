@@ -11,6 +11,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FindEmployeeComponent } from './find-employee/find-employee.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 const appRoute: Routes = [
@@ -35,7 +36,8 @@ const appRoute: Routes = [
     MatSidenavModule,
     FormsModule,
     RouterModule.forRoot(appRoute),
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

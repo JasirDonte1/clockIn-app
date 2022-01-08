@@ -18,10 +18,31 @@
 
 #outputConsole{
     height: 400px;
-    width: 800px;
+    width: 500px;
     background-color: rgb(253, 253, 253);
     border: 10px solid darkgray;
-    margin-left: 11%;
-    margin-right: 15%;
+    margin: 0 auto;
     margin-top: 5%;
 }
+
+table{
+    width: 100%;
+}
+
+.mat-column-ID {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+}
+  
+.mat-column-Name{
+    padding-left: 16px;
+}
+  
+.mat-column-Type {
+    font-style: italic;
+    width: 32px;
+
+}
+  
