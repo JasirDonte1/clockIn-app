@@ -4,8 +4,8 @@
     <input type="text" class="field" name="text-field" [(ngModel)]="employee_name">
     <br class="break">
     <div class="checkbox">
-        <mat-checkbox labelPosition="before"  [(ngModel)]="manager_account">Is this a Manager Account?</mat-checkbox>
+        <mat-checkbox labelPosition="before"  [(ngModel)]="eType">Is this a Manager Account?</mat-checkbox>
     </div>
-    <button>SUBMIT</button>
+    <button type="submit" (click)="SubmitEmployeeForm()">SUBMIT</button>
 </div>
 

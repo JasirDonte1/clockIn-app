@@ -12,7 +12,7 @@ import { FormControl } from '@angular/forms';
 export class FindEmployeeComponent implements OnInit {
 
   search:string = ""; 
-  found:Employee = new Employee('temp');
+  found:Employee = new Employee('temp',false);
   employeeFound:boolean = false; 
   editConsole:boolean = false;
  

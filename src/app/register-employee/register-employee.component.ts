@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Employee } from '../modles/Employee';
 
 @Component({
@@ -9,15 +11,28 @@ import { Employee } from '../modles/Employee';
 export class RegisterEmployeeComponent implements OnInit {
 
   employee_name:string = "";
-  manager_account:boolean = false;
+  eType:boolean = false;
+  temp:Employee = new Employee('temp',false);
+  test = "";
+  
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) {
+    
+  }
 
   ngOnInit(): void {
   }
 
   SubmitEmployeeForm(){
-    
+    this.temp = new Employee(this.employee_name, this.eType);
+    this.PostEmployeeData(this.temp);
+    //this.router.navigate(['/']);
+  }
+  PostEmployeeData(data:Employee){
+    this.http.post("https://ng-clock-in-app-default-rtdb.firebaseio.com/posts.json",data
+    ).subscribe(response => {
+      console.log(response);
+    });
   }
 
 }

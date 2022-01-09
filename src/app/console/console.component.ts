@@ -16,21 +16,21 @@ export class ConsoleComponent implements OnInit {
       id: 123,
       wage: 15.00,
       status: true,
-      eType: 1
+      eType: false
     },
     {
       name: "Tom",
       id: 345,
       wage: 15.00,
       status: true,
-      eType: 1
+      eType: false
     },
     {
       name: "Rob",
       id: 678,
       wage: 15.00,
       status: false,
-      eType: 2
+      eType: true
     }
   ];
   tableColumns = ['ID', 'Name', 'Type']; 

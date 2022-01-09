@@ -16,7 +16,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { HttpClientModule } from '@angular/common/http';
-import { DatabaseComponent } from './database/database.component'
 
 const appRoute: Routes = [
   {path: '', component: ConsoleComponent},
@@ -32,7 +31,6 @@ const appRoute: Routes = [
     ConsoleComponent,
     RegisterEmployeeComponent,
     FindEmployeeComponent,
-    DatabaseComponent
   ],
   imports: [
     BrowserModule,

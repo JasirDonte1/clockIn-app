@@ -6,10 +6,11 @@ export class Employee{
 
     status:boolean = false;
 
-    eType:number = 1;
+    eType:boolean = false;
 
-    constructor(name:string){
+    constructor(name:string, eType:boolean){
         this.name = name;
+        this.eType = eType;
     }
     
 }
@@ -17,8 +18,8 @@ export class Manager extends Employee {
 
     code:number;
 
-    constructor(name:string){
-        super(name);
+    constructor(name:string, eType:boolean){
+        super(name, eType);
         this.wage = 25.00;
         this.code = 12345;
     }
