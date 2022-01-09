@@ -16,6 +16,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 const appRoute: Routes = [
   {path: '', component: ConsoleComponent},
@@ -44,7 +45,8 @@ const appRoute: Routes = [
     MatAutocompleteModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Employee } from '../modles/Employee';
 
@@ -16,7 +17,7 @@ export class RegisterEmployeeComponent implements OnInit {
   test = "";
   
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, public dialog: MatDialog) {
     
   }
 
@@ -25,7 +26,9 @@ export class RegisterEmployeeComponent implements OnInit {
 
   SubmitEmployeeForm(){
     this.temp = new Employee(this.employee_name, this.eType);
-    this.PostEmployeeData(this.temp);
+    //confirm account details 
+
+    this.PostEmployeeData(this.temp); //post data to server 
     //this.router.navigate(['/']);
   }
   PostEmployeeData(data:Employee){
@@ -35,4 +38,13 @@ export class RegisterEmployeeComponent implements OnInit {
     });
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }
+export class DialogContentExampleDialog {}
