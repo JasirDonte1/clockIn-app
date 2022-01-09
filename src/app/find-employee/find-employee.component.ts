@@ -21,7 +21,11 @@ export class FindEmployeeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+    this.editConsole = false;
+  }
+
+  SwitchToEditConsole(){
+    this.editConsole = !this.editConsole;
   }
 
 

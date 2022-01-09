@@ -38,13 +38,6 @@ export class RegisterEmployeeComponent implements OnInit {
     });
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
 }
-export class DialogContentExampleDialog {}
