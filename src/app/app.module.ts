@@ -11,8 +11,12 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FindEmployeeComponent } from './find-employee/find-employee.component';
-import {MatTableModule} from '@angular/material/table';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ReactiveFormsModule} from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { HttpClientModule } from '@angular/common/http';
+import { DatabaseComponent } from './database/database.component'
 
 const appRoute: Routes = [
   {path: '', component: ConsoleComponent},
@@ -27,7 +31,8 @@ const appRoute: Routes = [
     AdminLoginComponent,
     ConsoleComponent,
     RegisterEmployeeComponent,
-    FindEmployeeComponent
+    FindEmployeeComponent,
+    DatabaseComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,11 @@ const appRoute: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoute),
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

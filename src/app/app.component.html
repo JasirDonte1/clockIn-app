@@ -1,10 +1,10 @@
 <html>
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over">
-      <button class="navButton" (click)="NavButtonPressed('home')">Home</button>
-      <button class="navButton" (click)="NavButtonPressed('find')">Find Employee</button>
-      <button class="navButton" (click)="NavButtonPressed('create')">Create New Account</button>
-      <button class="navButton" (click)="NavButtonPressed('admin')">Admin Login</button>
+      <button class="navButton" routerLink="/" (click)="sidenav.toggle()">Home</button>
+      <button class="navButton" routerLink="/search" (click)="sidenav.toggle()">Find Employee</button>
+      <button class="navButton" routerLink="/register" (click)="sidenav.toggle()">Create New Account</button>
+      <button class="navButton" routerLink="/login" (click)="sidenav.toggle()">Admin Login</button>
     </mat-sidenav>
     <mat-sidenav-content> 
       <h1 id="title">{{ title }}</h1>

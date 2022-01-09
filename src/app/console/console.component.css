@@ -45,4 +45,8 @@ table{
     width: 32px;
 
 }
-  
+
+#side-title{
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+}
