@@ -23,6 +23,7 @@
     border: 10px solid darkgray;
     margin: 0 auto;
     margin-top: 5%;
+    overflow-y: auto;
 }
 
 table{
@@ -49,4 +50,7 @@ table{
 #side-title{
     writing-mode: vertical-lr;
     text-orientation: mixed;
+}
+th{
+    font-weight: bold;
 }

@@ -17,6 +17,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { DialogRegisterComponent } from './dialog-register/dialog-register.component';
 
 const appRoute: Routes = [
   {path: '', component: ConsoleComponent},
@@ -26,12 +27,16 @@ const appRoute: Routes = [
 ];
 
 @NgModule({
+  entryComponents:[
+    DialogRegisterComponent,
+  ],
   declarations: [
     AppComponent,
     AdminLoginComponent,
     ConsoleComponent,
     RegisterEmployeeComponent,
     FindEmployeeComponent,
+    DialogRegisterComponent,
   ],
   imports: [
     BrowserModule,

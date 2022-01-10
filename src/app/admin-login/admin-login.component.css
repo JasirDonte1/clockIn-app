@@ -1,14 +1,15 @@
 h1{
     padding-top: 10px;
     padding-left: 30px;
-    color: rgb(146, 146, 146);
+    color: #929292;
+    margin: 0 auto;
 }
 .shell {
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 10%;
     width: 20%;
     border: 20px solid rgb(146, 146, 146);
-    padding: 10px;
+    padding: 15px;
     background-color: rgb(221, 221, 221);
   }
 

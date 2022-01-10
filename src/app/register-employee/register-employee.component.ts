@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DialogRegisterComponent } from '../dialog-register/dialog-register.component';
 import { Employee } from '../modles/Employee';
 
 @Component({
@@ -18,7 +19,7 @@ export class RegisterEmployeeComponent implements OnInit {
   
 
   constructor(private http: HttpClient, private router: Router, public dialog: MatDialog) {
-    
+
   }
 
   ngOnInit(): void {
@@ -30,12 +31,17 @@ export class RegisterEmployeeComponent implements OnInit {
 
     this.PostEmployeeData(this.temp); //post data to server 
     //this.router.navigate(['/']);
+    this.ConfirmEmployeeData();
   }
   PostEmployeeData(data:Employee){
     this.http.post("https://ng-clock-in-app-default-rtdb.firebaseio.com/posts.json",data
     ).subscribe(response => {
       console.log(response);
     });
+  }
+
+  ConfirmEmployeeData(){
+    let dialogRef = this.dialog.open(DialogRegisterComponent);
   }
 
 

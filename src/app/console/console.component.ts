@@ -31,7 +31,43 @@ export class ConsoleComponent implements OnInit {
       wage: 15.00,
       status: false,
       eType: true
+    },
+    {
+      name: "Lex",
+      id: 123,
+      wage: 15.00,
+      status: true,
+      eType: false
+    },
+    {
+      name: "Jon",
+      id: 345,
+      wage: 15.00,
+      status: true,
+      eType: false
+    },
+    {
+      name: "Jack",
+      id: 678,
+      wage: 15.00,
+      status: false,
+      eType: true
+    },
+    {
+      name: "Tao",
+      id: 345,
+      wage: 15.00,
+      status: true,
+      eType: false
+    },
+    {
+      name: "Coby",
+      id: 678,
+      wage: 15.00,
+      status: false,
+      eType: true
     }
+
   ];
   tableColumns = ['ID', 'Name', 'Type']; 
   

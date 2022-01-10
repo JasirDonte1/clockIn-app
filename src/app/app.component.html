@@ -7,7 +7,7 @@
       <button class="navButton" routerLink="/login" (click)="sidenav.toggle()">Admin Login</button>
     </mat-sidenav>
     <mat-sidenav-content> 
-      <h1 id="title">{{ title }}</h1>
+      <h1 id="title" routerLink="/">{{ title }}</h1>
       <img id="sidenav" src="assets/images/sidenav-icon.png" (click)="sidenav.toggle()"/>
       <div id="outlet">
         <router-outlet></router-outlet>
