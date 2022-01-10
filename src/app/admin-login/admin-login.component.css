@@ -1,15 +1,24 @@
-h1{
-    padding-top: 10px;
-    padding-left: 30px;
-    color: #929292;
-    margin: 0 auto;
-}
+
 .shell {
     margin: 0 auto;
     margin-top: 10%;
-    width: 20%;
-    border: 20px solid rgb(146, 146, 146);
-    padding: 15px;
-    background-color: rgb(221, 221, 221);
+    width: 300px;
+    height: 100px;
+    border: 15px solid darkgray;
+    padding: 15px 20px;
+    background-color: whitesmoke;
   }
 
+button{
+    margin-top: 2%;
+    width: 300px;
+    border: 3px solid darkgray;
+    background-color: whitesmoke;
+    color: rgb(128, 128, 128)
+}
+
+input[type=text], label {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}

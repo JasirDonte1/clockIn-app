@@ -1,3 +1,4 @@
+import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../modles/Employee';
 
@@ -10,7 +11,7 @@ export class ConsoleComponent implements OnInit {
 
   userInput = "";
   output = ""
-  data: Employee[] = [
+  OnTheClock: Employee[] = [
     {
       name: "Bob",
       id: 123,
@@ -76,6 +77,23 @@ export class ConsoleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //On init Load data from database of employess with status==True
+  }
+
+  FindEmployee(){
+    temp:Employee;
+
+  }
+
+  FormSubmit(){
+
+    //confirm employee exists in database 
+    //check if employee is clocked in 
+    //if employee is not clocked in, clock employee in and vice versa 
+
+    //if not clocked in
+
+
   }
 
  

@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogRegisterComponent } from './dialog-register/dialog-register.component';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 
 const appRoute: Routes = [
   {path: '', component: ConsoleComponent},
@@ -37,6 +38,7 @@ const appRoute: Routes = [
     RegisterEmployeeComponent,
     FindEmployeeComponent,
     DialogRegisterComponent,
+    DialogDeleteComponent,
   ],
   imports: [
     BrowserModule,
