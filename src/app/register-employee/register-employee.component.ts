@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DialogRegisterComponent } from '../dialog-register/dialog-register.component';
 import { Employee } from '../modles/Employee';
+import { ServerFunctions } from '../modles/ServerFunctions';
 
 @Component({
   selector: 'app-register-employee',
@@ -12,6 +13,7 @@ import { Employee } from '../modles/Employee';
 })
 export class RegisterEmployeeComponent implements OnInit {
 
+  sf:ServerFunctions;
   employee_name:string = "";
   eType:boolean = false;
   temp:Employee = new Employee('temp',false);
@@ -19,7 +21,7 @@ export class RegisterEmployeeComponent implements OnInit {
   
 
   constructor(private http: HttpClient, private router: Router, public dialog: MatDialog) {
-
+    this.sf = new ServerFunctions(http);
   }
 
   ngOnInit(): void {
@@ -29,15 +31,13 @@ export class RegisterEmployeeComponent implements OnInit {
     this.temp = new Employee(this.employee_name, this.eType);
     //confirm account details 
 
-    this.PostEmployeeData(this.temp); //post data to server 
+    this.PostEmployeeData(); //post data to server 
     //this.router.navigate(['/']);
     this.ConfirmEmployeeData();
   }
-  PostEmployeeData(data:Employee){
-    this.http.post("https://ng-clock-in-app-default-rtdb.firebaseio.com/posts.json",data
-    ).subscribe(response => {
-      console.log(response);
-    });
+
+  PostEmployeeData(){
+    this.sf.RegisterEmployee(this.temp);
   }
 
   ConfirmEmployeeData(){

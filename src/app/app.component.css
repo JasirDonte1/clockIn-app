@@ -4,6 +4,12 @@ h1{
     padding-left: 75px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(146, 146, 146);
+    font-size: 40px;
+    margin-bottom: 5%;
+}
+
+menu{
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 mat-sidenav-container {
@@ -25,7 +31,7 @@ mat-sidenav {
 }
 #sidenav{
     height: 30px;
-    border: 7px solid rgb(221, 221, 221);
+    border: 7px solid darkgray;
     position: fixed;
     top: 65px;
     background-color: rgb(243, 243, 243);

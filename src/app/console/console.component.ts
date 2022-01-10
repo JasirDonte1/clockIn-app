@@ -78,21 +78,19 @@ export class ConsoleComponent implements OnInit {
 
   ngOnInit(): void {
     //On init Load data from database of employess with status==True
+    
   }
 
-  FindEmployee(){
-    temp:Employee;
+ 
 
-  }
+  FormSubmission(){
 
-  FormSubmit(){
-
-    //confirm employee exists in database 
+    //confirm employee exists in database by confirming id exist in database
+    //continue if employee exists: else return message saying employee does not exist
     //check if employee is clocked in 
     //if employee is not clocked in, clock employee in and vice versa 
-
-    //if not clocked in
-
+    //if not clocked in consoleResponse = "employee not found in system"
+    //when clocking in or out, change status of employee
 
   }
 

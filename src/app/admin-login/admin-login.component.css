@@ -3,7 +3,7 @@
     margin: 0 auto;
     margin-top: 10%;
     width: 300px;
-    height: 100px;
+    height: 115px;
     border: 15px solid darkgray;
     padding: 15px 20px;
     background-color: whitesmoke;
@@ -13,6 +13,13 @@ button{
     margin-top: 2%;
     width: 300px;
     border: 3px solid darkgray;
+    background-color: darkgray;
+    color: whitesmoke;
+    padding-top: 3px;
+    padding-left: 3px;
+    
+}
+button:hover{
     background-color: whitesmoke;
     color: rgb(128, 128, 128)
 }
@@ -21,4 +28,13 @@ input[type=text], label {
     width: 100%;
     display: inline-block;
     box-sizing: border-box;
+    padding-top: 3px;
+}
+
+input, button{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+label{
+    color: rgb(116, 116, 116);
 }

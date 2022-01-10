@@ -1,7 +1,40 @@
 .register-page{
-    padding-left: 70px;
+    margin-left: 50px;
+    width: 265px;
+    margin: auto;
 }
-
+.register-page, h1, button, label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 h1{
     color: rgb(146, 146, 146);
+    
+}
+
+app-dialog-register {
+    display: none;
+}
+
+.checkbox{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: darkgray; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    width: 100%;
+}
+button:hover{
+    background-color: whitesmoke;
+    color: darkgray;
+    border: 2px solid darkgray;
+}
+label{
+    padding-right: 10px;
 }
