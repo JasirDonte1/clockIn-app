@@ -84,7 +84,6 @@ export class ConsoleComponent implements OnInit {
     //On init Load data from database of employess with status==True
     this.sf.LoadDatabase();
     this.OnTheClock = this.sf.GetEmployeesClockedIn(this.db);
-    
   }
 
  

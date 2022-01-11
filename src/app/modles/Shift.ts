@@ -6,7 +6,7 @@ export class Shift{
     employee:Employee;
     clockIn:Date;
     clockOut:Date;
-    earned:number | undefined; 
+    earned:number = 0; 
 
     constructor(employee:Employee){
         this.employee = employee;
