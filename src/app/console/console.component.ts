@@ -1,6 +1,8 @@
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../modles/Employee';
+import { ServerFunctions } from '../modles/ServerFunctions';
 
 @Component({
   selector: 'app-console',
@@ -9,6 +11,7 @@ import { Employee } from '../modles/Employee';
 })
 export class ConsoleComponent implements OnInit {
 
+  sf:ServerFunctions;
   userInput = "";
   output = ""
   OnTheClock: Employee[] = [
@@ -70,14 +73,17 @@ export class ConsoleComponent implements OnInit {
     }
 
   ];
-  tableColumns = ['ID', 'Name', 'Type']; 
+  tableColumns = ['ID', 'Name', 'Type'];
+  db:Employee[] = [] //all load data form confirmed employees stored in this array 
   
   consoleResponse = ""; 
 
-  constructor() { }
+  constructor(private http: HttpClient) { this.sf = new ServerFunctions(http)}
 
   ngOnInit(): void {
     //On init Load data from database of employess with status==True
+    this.sf.LoadDatabase();
+    this.OnTheClock = this.sf.GetEmployeesClockedIn(this.db);
     
   }
 

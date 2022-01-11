@@ -21,6 +21,7 @@ export class DialogRegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.employeeData.name);
   }
 
 

@@ -31,19 +31,16 @@ export class RegisterEmployeeComponent implements OnInit {
     this.temp = new Employee(this.employee_name, this.eType);
     //confirm account details 
 
-    this.PostEmployeeData(); //post data to server 
+    this.sf.RegisterEmployee(this.temp); //post data to server 
     //this.router.navigate(['/']);
     this.ConfirmEmployeeData();
   }
 
-  PostEmployeeData(){
-    this.sf.RegisterEmployee(this.temp);
-  }
+ 
 
   ConfirmEmployeeData(){
     let dialogRef = this.dialog.open(DialogRegisterComponent);
   }
-
 
 
 }
