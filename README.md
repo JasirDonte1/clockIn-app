@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
+This web application serves as an aid to keep track of what employees are on the job and data pertaining to an employee's shift and expected payout. Employee data is stored and accessed using a NoSQL server (Firebase). 
+
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
