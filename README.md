@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This web application serves as an aid to keep track of what employees are on the job and data pertaining to an employee's shift and expected payout. Employee data is stored and accessed using a NoSQL server (Firebase). 
 
-![This is an image](https://i.ibb.co/Lk9tpFB/IMG-3345.jpg)
 
+<img src="https://i.ibb.co/Lk9tpFB/IMG-3345.jpg" width="100" height="100">
 
 ## Development server
 
