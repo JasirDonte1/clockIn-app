@@ -16,7 +16,7 @@ export class RegisterEmployeeComponent implements OnInit {
   sf:ServerFunctions;
   employee_name:string = "";
   eType:boolean = false;
-  temp:Employee = new Employee('temp',false);
+  temp:Employee = new Employee('temp',false,"tempID");
   test = "";
   
 
@@ -28,7 +28,7 @@ export class RegisterEmployeeComponent implements OnInit {
   }
 
   SubmitEmployeeForm(){
-    this.temp = new Employee(this.employee_name, this.eType);
+    //this.temp = new Employee(this.employee_name, this.eType, this.dbID);
     //confirm account details 
 
     this.sf.RegisterEmployee(this.temp); //post data to server 

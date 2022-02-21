@@ -17,6 +17,7 @@ export class AdminLoginComponent implements OnInit {
 
   AttemptLogin(){
     
+    
   }
 
 }

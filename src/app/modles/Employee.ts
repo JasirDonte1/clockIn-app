@@ -8,18 +8,22 @@ export class Employee{
 
     eType:boolean = false;
 
-    constructor(name:string, eType:boolean){
+    dbID:string;
+
+    constructor(name:string, eType:boolean, dbID:string){
         this.name = name;
         this.eType = eType;
+        this.dbID = dbID;
     }
+    
     
 }
 export class Manager extends Employee {
 
     code:number;
 
-    constructor(name:string, eType:boolean){
-        super(name, eType);
+    constructor(name:string, eType:boolean, dbID:string){
+        super(name, eType, dbID);
         this.wage = 25.00;
         this.code = 12345;
     }

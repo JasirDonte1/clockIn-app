@@ -1,6 +1,7 @@
 import { Employee } from "./Employee";
 import { HttpClient } from "@angular/common/http";
 import { map } from 'rxjs/operators';
+import { Shift } from "./Shift";
 
 export class ServerFunctions{
     
@@ -20,20 +21,33 @@ export class ServerFunctions{
 
     LoadDatabase(){
         //returns an array of employee data 
-        this.http.get("https://ng-clock-in-app-default-rtdb.firebaseio.com/employees.json"
-        ).subscribe(response => {
-            console.log(response);
-        });
+        this.http.get<{[key: string]:Employee}>("https://ng-clock-in-app-default-rtdb.firebaseio.com/employees.json"
+        ).pipe(
+            map(responseData => {
+                const employeeData: Employee[] = [];
+                for(const key in responseData){
+                    if(responseData.hasOwnProperty(key)){
+                        employeeData.push({...responseData[key], dbID:key})
+                    }
+                }
+                return employeeData;
+            })
+        ).subscribe();
     }
 
     returnClockedIn:Employee[] = [];
     GetEmployeesClockedIn(employees:Employee[]){
+        this.returnClockedIn = [];
         //returns an array of employee data where status == true (clocked in)
         for(let employee of employees){
             if(employee.status == true){  //true means that an employee has clocked in 
                 this.returnClockedIn.push(employee);
             }
         }
+
+        //convert array to JSON 
+        
+
         return this.returnClockedIn;
     }
 
@@ -56,7 +70,9 @@ export class ServerFunctions{
 
    
 
-    AddWorkShift(){
+    AddWorkShift(employee:Employee){
         //adds shift to database 
+        let shift = new Shift(employee);
+        //update database with new shift 
     }
 }

@@ -1,7 +1,7 @@
 <div class="input-wrapper">
     <div id="innerSection">
         <input id="input" class="input" type="text" placeholder="Enter Employee ID#" name="eid" [(ngModel)]="userInput" required>
-        <button id="submitButton">SUBMIT</button>
+        <button id="submitButton" (click)="FormSubmission()">SUBMIT</button>
         <p id="response">{{ consoleResponse }}</p>
     </div>
 </div>
