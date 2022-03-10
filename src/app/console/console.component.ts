@@ -15,62 +15,22 @@ export class ConsoleComponent implements OnInit {
   sf:ServerFunctions;
   userInput = "";
   output = "";
-  OnTheClock = [
-    {
-      name: "Bob",
-      id: 123,
-      wage: 15.00,
-      status: true,
-      eType: false,
-      dbID: "tempID"
-    },
-    {
-      name: "Tom",
-      id: 345,
-      wage: 15.00,
-      status: true,
-      eType: false,
-      dbID: "tempID"
-    },
-    {
-      name: "Rob",
-      id: 678,
-      wage: 15.00,
-      status: false,
-      eType: true,
-      dbID: "tempID"
-    },
-    {
-      name: "Lex",
-      id: 123,
-      wage: 15.00,
-      status: true,
-      eType: false,
-      dbID: "tempID"
-    },
-    {
-      name: "Jon",
-      id: 345,
-      wage: 15.00,
-      status: true,
-      eType: false,
-      dbID: "tempID"
-    },
-
-  ];
+  OnTheClock:Employee[] = [new Employee("fake data",true,"")];
   tableColumns = ['ID', 'Name', 'Type'];
-  db:Employee[] = [] //all load data form confirmed employees stored in this array 
-  private changeDetectorRefs!: ChangeDetectorRef;
+  db:Employee[] = []; //all load data form confirmed employees stored in this array 
   consoleResponse = ""; 
 
-  constructor(private http: HttpClient) { this.sf = new ServerFunctions(http)}
+  constructor(private http: HttpClient, private changeDetectorRefs:ChangeDetectorRef) { 
+    this.sf = new ServerFunctions(http);
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
     //On init Load data from database of employess with status==True
-    this.LoadDatabase();
-    console.log(this.OnTheClock)    
-
+    //this.OnTheClock.push(new Employee("Johnson",false,'fjhdfh'));
     //this.OnTheClock = this.sf.GetEmployeesClockedIn(this.db);
+    this.LoadDatabase()
+    console.log(this.OnTheClock)
+    console.log(this.OnTheClock.length)
   }
 
   LoadDatabase(){
@@ -78,30 +38,24 @@ export class ConsoleComponent implements OnInit {
     this.http.get<{[key: string]:Employee}>("https://ng-clock-in-app-default-rtdb.firebaseio.com/employees.json"
     ).pipe(
         map(responseData => {
-            const employeeData: Employee[] = [];
+            const employeeData:Employee[] = [];
             for(const key in responseData){
                 if(responseData.hasOwnProperty(key)){
-                    employeeData.push({...responseData[key], dbID:key})
+                    this.OnTheClock.push({...responseData[key], dbID:key})
                 }
             }
             return employeeData;
         })
     ).subscribe( data => {
       data.forEach(e => {
-        e = {
-          name: e.name,
-          id: e.id,
-          wage: e.wage,
-          status: e.status,
-          eType: e.eType,
-          dbID: e.dbID
-        };
-        console.log();
-        this.OnTheClock.push(e);
+        this.db.push(new Employee(e.name, e.eType, e.dbID));
+        this.OnTheClock.push(new Employee(e.name, e.eType, e.dbID))
       })
-    }
+    });
+    console.log("LoadDatabase function completed");
+  }
 
-    );
+  DetectChanges(){
     this.changeDetectorRefs.detectChanges();
   }
 
@@ -112,26 +66,41 @@ export class ConsoleComponent implements OnInit {
   FormSubmission(){
     let eid = Number(this.userInput);
     if (!isNaN(eid)){ //check if the input is a number 
-      if(this.CheckDB(eid)){
-
-      }
-    }
-
+      if(this.CheckDB(eid)){ //check DB for employee 
+        if(this.CheckClock(eid)){ //check clock for employee 
+          this.ClockOut(eid);
+        }else{
+          this.ClockIn(eid);
+        }
+      }else{this.EnterValidID()}
+    }else{this.EnterValidID}
     //confirm employee exists in database by confirming id exist in database
     //continue if employee exists: else return message saying employee does not exist
     //check if employee is clocked in 
     //if employee is not clocked in, clock employee in and vice versa 
     //if not clocked in consoleResponse = "employee not found in system"
     //when clocking in or out, change status of employee
-
+    this.ClearConsole();
+  }
+  ClearConsole(){
+    setTimeout(() => { 
+      this.consoleResponse = "";
+      this.userInput = "";
+   }, 4000); //clears console after 4 seconds 
   }
 
-  ClockIn(){
+  ClockIn(id:Number){
     //change employees clocked in status to true 
+    let employee = this.GetEmployee(id);
+    employee.status = true; 
+    this.consoleResponse = `CLOCKED IN -- HELLO ${employee.name}!`;
   }
 
-  ClockOut(){
+  ClockOut(id:Number){
     //change employees clocked in status to false
+    let employee = this.GetEmployee(id);
+    employee.status = false; 
+    this.consoleResponse = `CLOCKED OUT -- BYE ${employee.name}!`;  
   }
 
   CheckClock(id:Number)
@@ -154,6 +123,20 @@ export class ConsoleComponent implements OnInit {
       }
     });
     return found;
+  }
+
+  GetEmployee(id:Number){
+    let employee = new Employee("",false,"");
+    this.db.forEach(e => {
+      if(id == e.id){
+        employee = e;
+      }
+    })
+    return employee;
+  }
+
+  LoadClock(){
+    console.log("Inside LoadClock")
   }
 
 }

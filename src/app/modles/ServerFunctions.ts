@@ -12,28 +12,21 @@ export class ServerFunctions{
     GetEmployeeToConfirm(){
         this.http.get("https://ng-clock-in-app-default-rtdb.firebaseio.com/confirm.json").subscribe();
     }
-    PostEmployeeToConfirm(data:Employee){
+    PostEmployee(data:Employee){
         this.http.post("https://ng-clock-in-app-default-rtdb.firebaseio.com/confirm.json",data
         ).subscribe(response => {
             console.log(response);
         });
     }
 
-    LoadDatabase(){
-        //returns an array of employee data 
-        this.http.get<{[key: string]:Employee}>("https://ng-clock-in-app-default-rtdb.firebaseio.com/employees.json"
-        ).pipe(
-            map(responseData => {
-                const employeeData: Employee[] = [];
-                for(const key in responseData){
-                    if(responseData.hasOwnProperty(key)){
-                        employeeData.push({...responseData[key], dbID:key})
-                    }
-                }
-                return employeeData;
-            })
-        ).subscribe();
-    }
+    /////////////////
+
+
+
+
+
+    //////////////
+
 
     returnClockedIn:Employee[] = [];
     GetEmployeesClockedIn(employees:Employee[]){
